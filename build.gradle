@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = "Main"
+
+sourceCompatibility = 1.8
+
+version = '1'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': '...', 'Implementation-Version': version
+    }
+}
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url = 'http://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    compile group: 'io.vertx', name: 'vertx-maven-service-factory', version: '3.0.0-SNAPSHOT'
+    compile group: 'io.vertx', name: 'vertx-core', version: '3.0.0-SNAPSHOT'
+
+    // a vertx3 extension for hk2 DI that is needed for vertx-elasticsearch-service
+    //compile group: 'com.englishtown.vertx', name: 'vertx-hk2', version: '2.0.0-SNAPSHOT'
+}
