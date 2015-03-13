@@ -1,0 +1,1 @@
+Test of [vertx-maven-service-factory](https://github.com/vert-x3/vertx-maven-service-factory) loading of [vertx-jdbc-service](https://github.com/vert-x3/vertx-jdbc-service) for https://groups.google.com/d/msg/vertx/cyCFFcWMTiI/jQrlWbrcHxQJ
